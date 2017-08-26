@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var uuid = require('node-uuid');
-var config = require('../tsconfig.json');
+
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var jwt    = require('jsonwebtoken');
