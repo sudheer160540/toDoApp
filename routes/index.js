@@ -128,7 +128,11 @@ router.post('/api/createreport', function (req, res, next) {
     Report.save(req.body, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
-        res.json({ 'status': 'success' });
+        console.log("result"+JSON.stringify(result));
+        if(result){
+res.json({ 'status': 'success' });
+        }
+        
 
         //res.redirect('/')
     })
