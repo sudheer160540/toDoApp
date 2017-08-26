@@ -63,14 +63,15 @@ router.post('/api/userRegister', function (req, res) {
   }, function(err, user) {
       if (!user) {
          console.log("enter")
-      res.json({ success: false, message: 'User already exists.' });
-     }else{
-    User.save(req.body, (err, result) => {
+      User.save(req.body, (err, result) => {
         if (err) return console.log(err)
         res.json({ 'status': 'success' });
         console.log('saved to database')
         //res.redirect('/')
     })
+     }else{
+          res.json({ success: false, message: 'User already exists.' });
+   
      }
     
   });
