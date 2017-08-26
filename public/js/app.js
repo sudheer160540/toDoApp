@@ -70,15 +70,17 @@ GetReports.removeRecordData(id).then(function(response) {
 getReports();
 });
 }
-$scope.addreport={"date":new Date(),"userId":data.userId}
+$scope.addreport={}
 
 
 console.log("data"+JSON.stringify(data));
 $scope.addItems=function(){
 console.log('enter'+JSON.stringify($scope.addreport));
+$scope.addreport['date']=new Date();
+$scope.addreport['userId']=data.userId
 
  GetReports.postReport($scope.addreport,data.access_token).then(function(response) {
-      
+      console.log("response"+JSON.stringify(response));
                if(response.status=='success'){
                   // $('#myModal').modal().hide();
                   $scope.addreport={};
